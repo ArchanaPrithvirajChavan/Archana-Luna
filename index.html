@@ -12,7 +12,9 @@
 
 
 <body>
-  <header>
+  <header> 
+                 <!-----Navigation Bar section-------->
+
         <section class="navBar">
     
          <nav>
@@ -21,15 +23,18 @@
              <li><a href="#experience">Experience</a></li>
              <li><a href="#highlight">Highlights</a></li>
              <li><a href="#Skills">Skills</a></li>
-             <li><a href="#Project">Projects</a></li>
+             <li><a href="#projects">Projects</a></li>
+             <li><a href="#in_form">Forms</a></li>
+             <li><a href="#info_form">Leave Message</a></li>
              </ul>
-       </nav>
+           </nav>
+       </section>
 </header>
         <h1>Archana Pruthuviraj Chavan</h1>
         <h2>अर्चना पृथ्विराज चव्हाण. </h2>
 
 
-      <div class="circle-img">
+      <div class="my_img">
           <img src="/Image/Archana.jpg" alt="">
       </div>
 
@@ -55,7 +60,7 @@
 
    </section>
 
-   <section id=" projects">
+   <section id="projects">
            <h2> Projects </h2>
            <ul> 
 
@@ -66,13 +71,20 @@
             Aspiring Software Developer with 1+ year of QA experience and growing skills in JavaScript, HTML, and CSS. Passionate about problem-solving, collaboration, and building reliable, user-friendly applications. Currently expanding technical expertise through <u> Code the Dream</u> training.
          </p>
 
+         
+  <section id="experience">
          <h3><u>Experience</u></h3>
+         <div class="job_Dates">
+            <u>Date</u> <br>
+                Apr 2024 – May 2025 (1 yr 2 months)<br>
 
-  <section class="experience">
+        </div>
+
+
          <div class="job_titles"><u><b>Job Title</b></u> <br>
 
-             <p><u>Quality Assurance Tester</u></p>
-             <P>Aivante Healthcare 
+         <p><u>Quality Assurance Tester</u></p>
+         <P>Aivante Healthcare 
 
              Performed manual and automation testing using Postman and Cypress.
 
@@ -83,16 +95,8 @@
              Mentored new team members during onboarding.
 
 </P> 
-       </div>
-
-
-        <div class="job_Dates"><u>Date</u> <br>
-                Apr 2024 – May 2025 (1 yr 2 months)<br>
-
-        </div>
-
-
-  <section class="highlight">
+       </div><br>
+     <section id="highlight">
           <h5> <u>Highlights</u> </h5>
 
           <ul>
@@ -101,7 +105,49 @@
               <li>Cypress Automation Testing</li>
 
               <li>Currently learning Web Development (JavaScript, HTML, CSS) with Code the Dream</li></ul>
- </section>
 
+              </section>
+              
+    </section><br><br>
+            
+ <section name="leave_message" id="info_form">
+
+      <h2>"Leave a Message"</h2>
+ </section><br>
+            <!---- create Form -->
+    <form id="in_form" name=form_name> 
+                   <!--create User Name text Box -->
+         <label for="usersName">User Name: </label><br>
+        <input type="text" name="usersName" class="form_input" placeholder="User Name" required><br><br>
+        
+                   <!--create Email text Box-->
+        <label for ="email">Email: </label><br>
+        <input type="email" name="usersEmail"class="form_input" placeholder="User Email" required><br><br>
+                    <!--create message text box-->
+        <label for="usersMessage">User Message</label><br>
+        <input type="text" name="usersMessage"class="form_input" placeholder="Write Message" required><br><br>
+                    <!--Create Submit button-->
+        <button id= "button_click"  type="submit">Submit</button>
+                    <!--Create Edit Button-->
+        <button id="edit_button" type ="button">Edit</button>
+         
+    </form>
+
+          <!--Create Message Section-->
+
+ <section id="Messages">
+         <h2>"Messages"</h2>
+        <p id="output_message">
+           
+        </p>
+ 
+             
+              <ul>
+
+              </ul>
+ </section>
+              
+
+<script src="JS/index.js" ></script>
 </body>
 </html>
