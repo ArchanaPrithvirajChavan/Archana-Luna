@@ -1,181 +1,198 @@
- // create memory for footer section in DOM//
+// create memory for footer section in DOM//
 
-      const footer=document.createElement("footer");
+const footer = document.createElement("footer");
 
-  //add some style to footer//
+//add some style to footer//
 
-       footer.setAttribute("style", "  margin-top: 0px; margin-bottom:20px; margin-left:50px;");
+footer.setAttribute(
+  "style",
+  "  margin-top: 0px; margin-bottom:20px; margin-left:50px;"
+);
 
-  //add id to footer section //
+//add id to footer section //
 
-      footer.setAttribute("id" ,"fooTer");
+footer.setAttribute("id", "fooTer");
 
-  //add footer to web page 
+//add footer to web page
 
-       document.body.appendChild(footer);
+document.body.appendChild(footer);
 
-   //get footer element by id=fooTer//
+//get footer element by id=fooTer//
 
-       const footerElement =document.getElementById("fooTer");
-       
+const footerElement = document.getElementById("fooTer");
 
+//create a variable for date //
 
-   //create a variable for date //
+const today = new Date();
 
-        const today= new Date();
+//create a variable for year//
 
-   //create a variable for year//
-
-        const thisYear=today.getFullYear();
+const thisYear = today.getFullYear();
 
 // create memory in DOM for paragraph element to write copyright text//
 
-       const copyright= document.createElement("p")
+const copyright = document.createElement("p");
 
 // add name ,year and unicode of copywrite in copyright section //
 
-      copyright.textContent= "\u00A9  Archana" +"  "+ thisYear ;
+copyright.textContent = "\u00A9  Archana" + "  " + thisYear;
+
 
 //Append copyrite to footer section //
 
-       footerElement.appendChild(copyright);
+footerElement.appendChild(copyright);
 
 // creating array of slills
 
-       let skill =["JavaScript", "HTML", "CSS", "Adobe Photoshop", "GitHub"]
+let skill = [
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "Postman",
+  "Cypress",
+  "GitHub",
+  "Tableau",
+];
 
 // Get section of skills with id=Skills //
 
-          const skillsSection = document.getElementById("Skills");
+const skillsSection = document.getElementById("Skills");
 
 //select ul element from skills section //
 
-         const skillsList = skillsSection.querySelector("ul")
+const skillsList = skillsSection.querySelector("ul");
 
 //use for loop to write array skill on Skills section //
 
-for(let i=0;i<skill.length;i++) 
-    {
-         //create list element li for each skill //
+for (let i = 0; i < skill.length; i++) {
+  //create list element li for each skill //
 
-          const skillsLi = document.createElement('li');
+  const skillsLi = document.createElement("li");
 
-         //write each skills on li section //
+  //write each skills on li section //
 
-          skillsLi.textContent=((skill[i]));
+  skillsLi.textContent = skill[i];
 
-         //append li to ul (i.e skillsList”)//
+  //append li to ul (i.e skillsList”)//
 
-          skillsList.appendChild(skillsLi);
+  skillsList.appendChild(skillsLi);
 }
 
-         //create messageForm veriable to get form by name//
-      
-        const messageForm=  document.querySelector('form[name="form_name"]')
+//create messageForm veriable to get form by name//
 
+const messageForm = document.querySelector('form[name="leave_message"]');
 
-         //get submit button by id ="button-click"//
-       
-         const button =document.getElementById('button_click')
+//get submit button by id ="button-click"//
 
+const button = document.getElementById("button_click");
 
-        //get output messege paragraph by id=output_message//
-         const output =document.getElementById('output_message')
+//get output messege paragraph by id=output_message//
+const output = document.getElementById("output_message");
 
-        //get message section by id=messages//
-          const messageSection=document.getElementById('Messages')
+//get message section by id=messages//
+const messageSection = document.getElementById("Messages");
 
-        //get message list section by id =ul //
-          const messageList =messageSection.querySelector("ul")
+//get message list section by id =ul //
+const messageList = messageSection.querySelector("ul");
 
-         //create list element // 
-        const newMessage =document.createElement('li')
+//add eventLicener to submit button//
 
-        // create Anchor tag // 
-      const a =document.createElement("a") 
+messageForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  messageSection.style.display = "block";
 
-         //create a spam //
-      const formSpan= document.createElement("span")
-        
-               //creat a new button removeButton//
-      const removeButton = document.createElement("button");
+  const userName = event.target.elements["usersName"].value;
+  const userEmail = event.target.elements["usersEmail"].value;
+  const userMessage = event.target.elements["usersMessage"].value;
 
+  //create list element //
+  const newMessage = document.createElement("li");
+  //set attributs for newMessage//
+  newMessage.setAttribute("class", "message-item");
+  //append newMessage to messageList//
 
-          //append a to li (newMessage)//
-         newMessage.appendChild(a);
+  newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a> : <span>${userMessage}</span>`;
+  // create Edit button
+  const editButton = document.createElement("button");
+  editButton.innerText = "Edit";
 
-          //append span to li//
-         newMessage.appendChild(formSpan);
-         
-          //append li to ul i.e messageList //
-          messageList.appendChild(newMessage);
-      
-          //append button to form//
-          newMessage.appendChild(removeButton);
+  // addEventListerner to edit button //
+  editButton.addEventListener("click", function () {
+    const messageSpan = newMessage.querySelector("span");
+    const newText = prompt("edit your message:", messageSpan.innerText);
+    if (newText !== null) {
+      messageSpan.innerText = newText;
+    }
+  });
+  //creat a new button removeButton//
+  const removeButton = document.createElement("button");
 
-          
-          //set innerText remove //
-          removeButton.innerText ='Remove';
+  //set attribute for removeButton //
+  removeButton.setAttribute("type", "button");
+  removeButton.setAttribute("class", "removeBtn");
 
-          //set attribute type button //
-          removeButton.setAttribute("type","button")
+  //set innerText remove //
+  removeButton.innerText = "Remove";
+  removeButton.style.fontSize = "15px";
 
-          
-          removeButton.style.fontSize = "15px";
+  //add evenlistener to removeButton //
+  removeButton.addEventListener("click", (event) => {
+    const entry = event.target.parentNode;
+    entry.remove();
+    messageSection.style.display = "none";
+  });
 
-            //add evenlistener to removeButton //
-          removeButton.addEventListener('click',(Event)=>{
-              Event.preventDefault();
+  //append Edit remove button to form//
+  newMessage.appendChild(editButton);
+  newMessage.appendChild(removeButton);
+  messageList.appendChild(newMessage);
+  console.log(userName);
+  console.log(userEmail);
+  console.log(userMessage);
+  // Display userName and Email on anchor tag  //
 
+  messageForm.reset();
+});
 
-           // create a variable entry that finds the button's parent element //
-           const entry = Event.target.parentNode;
-            entry.remove();
-           })
-        
-           //add eventLicener to messageForm//
+const form_text = document.querySelector(".form_text");
 
-           messageForm.addEventListener('submit',(event)=>
-           {
-          event.preventDefault();
-          messageSection.style.display = 'block';
-          const userName = event.target.elements['usersName'].value;
-          const userEmail= event.target.elements['usersEmail'].value;
-          const userMessage=event.target.elements['usersMessage'].value;
-          
-          output.innerText = `Information Submitted: ${userName}`;
-          
-          console.log(userName);
-          console.log(userEmail);
-          console.log(userMessage);
-          // Display userName and Email on anchor tag  //
-         
-          a.href = `mailto:${userEmail}`;
-          a.textContent = `${userName} (${userEmail})`;
-          formSpan.textContent=userMessage;
-          messageForm.reset();
+const messageInput = document.querySelector('[name="usersMessage"]');
 
-           })
-         
-         const form_text = document.querySelector(".form_text");
-         const editButton = document.getElementById("edit_button")
-         const messageInput = document.querySelector('[name="usersMessage"]');
-         
+// create GET requist to fetch Github projects//
+fetch("https://api.github.com/users/ArchanaPrithvirajChavan/repos")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response is not ok");
+    }
+    return response.json();
+  })
+  .then((data) => {
+    //create a veriable name repositories to store data//
+    const repositories = data;
+    //create a variable name projectSection to select project section by  id="projects"//
 
+    const projectSection = document.getElementById("projects");
+    //create a variable name projectList to select ul element from project section//
+    const projectList = projectSection.querySelector("ul");
+    //create a for loop to iterate over your repositories Array//
+    for (let i = 0; i < repositories.length; i++) {
+      //create li element name project//
+      const project = document.createElement("li");
+      //create <a>
+      const link = document.createElement("a");
+      //write each repository name on prject//
+      link.textContent = repositories[i].name;
+      link.href = repositories[i].html_url;
+      //display repository in new tab
+      link.target = "_blank";
+      //append project to projectlist//
 
-        editButton.addEventListener('click', (event) => {
+      projectList.appendChild(project);
+      project.appendChild(link);
+    }
 
-          event.preventDefault();
-           messageInput.focus();
-  
-    
- 
-         })
-
-         
-          
-          
-         
-         
-          
-    
+    console.log(repositories);
+  })
+  .catch((error) => {
+    console.error("response not found");
+  });
