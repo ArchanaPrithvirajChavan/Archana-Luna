@@ -52,6 +52,7 @@ let skill = [
   "Cypress",
   "GitHub",
   "Tableau",
+  "SQL",
 ];
 
 // Get section of skills with id=Skills //
@@ -77,7 +78,27 @@ for (let i = 0; i < skill.length; i++) {
 
   skillsList.appendChild(skillsLi);
 }
+  function toggleMode() {
+    const body =document.body;
+    const about=document.getElementById("About")
+    const naveBar=document.getElementById("navBar")
+    const toggle = document.getElementById("modeToggle");
 
+  if(toggle.checked){
+   
+    body.classList.add("dark-mode");
+    body.classList.remove("light-mode");
+    
+  }
+  else{
+    body.classList.remove("dark-mode");
+    body.classList.add("light-mode")
+    
+  }
+  
+  //document.body.classList.add("light-mode");
+
+  }
 //create messageForm veriable to get form by name//
 
 const messageForm = document.querySelector('form[name="leave_message"]');
@@ -109,21 +130,33 @@ messageForm.addEventListener("submit", (event) => {
   const newMessage = document.createElement("li");
   //set attributs for newMessage//
   newMessage.setAttribute("class", "message-item");
-  //append newMessage to messageList//
+  
 
   newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a> : <span>${userMessage}</span>`;
+
+  
   // create Edit button
   const editButton = document.createElement("button");
+  editButton.setAttribute("class","edit_button")
+    
+  
   editButton.innerText = "Edit";
 
   // addEventListerner to edit button //
   editButton.addEventListener("click", function () {
-    const messageSpan = newMessage.querySelector("span");
-    const newText = prompt("edit your message:", messageSpan.innerText);
-    if (newText !== null) {
-      messageSpan.innerText = newText;
-    }
-  });
+     messageSpan = newMessage.querySelector("span");
+   
+      if(messageSpan){
+      messageSpan.setAttribute("contenteditable","true")
+      messageSpan.focus();
+      const range=document.createRange();
+      const selection =window.getSelection();
+      range.selectNodeContents(messageSpan)
+      range.collapse(false);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }}
+  );
   //creat a new button removeButton//
   const removeButton = document.createElement("button");
 
@@ -139,7 +172,9 @@ messageForm.addEventListener("submit", (event) => {
   removeButton.addEventListener("click", (event) => {
     const entry = event.target.parentNode;
     entry.remove();
+    if (messageList.children.length === 0) {
     messageSection.style.display = "none";
+  }
   });
 
   //append Edit remove button to form//
@@ -195,4 +230,5 @@ fetch("https://api.github.com/users/ArchanaPrithvirajChavan/repos")
   })
   .catch((error) => {
     console.error("response not found");
+      
   });

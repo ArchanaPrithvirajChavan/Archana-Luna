@@ -5,18 +5,22 @@
 
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>profile</title>
+      <title>profile Website</title>
       <link href="css/index.css"    rel="Stylesheet">
+      
 
 </head>
 
 
-<body>
+<body class="light-mode">
   <header> 
                  <!-----Navigation Bar section-------->
 
         <section class="navBar">
-    
+          <label class="switch">
+          <input type="checkbox" id="modeToggle" onclick ="toggleMode()" aria-label="Toggle night mode">
+         <span class ="slider"></span>
+          </label>
          <nav>
             <ul>
              <li><a href="#About">About</a></li>
@@ -34,40 +38,41 @@
         <h3><b><u>About</u></b></h3> 
 
         <div class="my_img">
-         <h1>Archana Pruthuviraj Chavan</h1>
-         <img src="/Image/Archana.jpg" alt="Archana Pruthuviraj Chavan" class="profile-img" >
+         <h1> Archana Chavan </h1>
+         <img src="Image\archana1.jpg" alt="Archana Pruthuviraj Chavan" class="profile-img" >
 
     </div>
       <p>
         Hi, my name is Archana, and I live in Sacramento, California. I'm passionate about coding and have a strong enthusiasm for learning new technologies.
         With a curious mind and a deep interest in innovation, I’m actively working toward transitioning into the IT industry as a Front-End Developer.
         I joined Code the Dream to strengthen my skills, gain hands-on experience, and connect with a supportive learning community.
-        When I’m not coding, you’ll often find me either in the kitchen cooking which I love,or gardening and enjoying the outdoors. 
+        When I’m not coding, you’ll often find me either in the kitchen cooking or gardening and enjoying the outdoors. 
         I'm a nature lover and find joy in simple, peaceful moments.
       </p>
       <section class="my_links">
   <a href="mailto:archana.chavan2@gmail.com" title="Email Me">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Email" class="icon">
+    <img src="Image/Gmail_Icon.png" alt="Email" class="icon">
   </a>
 
   <a href="https://www.linkedin.com/in/archana-chavan-b276b0262/" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="icon">
+  <img src="Image/LinkedIn_logo_initials.png" alt="LinkedIn" class="icon">
 </a>
 
 
   <a href="https://github.com/ArchanaPrithvirajChavan" target="_blank" rel="noopener noreferrer" title="GitHub Profile">
-    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="icon">
+    <img src="Image/GitHub-Mark.png" alt="GitHub" class="icon">
   </a>
-</section>
-        </section>
+</section>  
+   </section>
+        
         
         <section id="Skills">
-        <h3> <u><b>Skills</b></u></h3>    
-            <ul>
+        <h3> <u><b>Skills</b></u></h3>  
+        <ul>
+          <!--- skills added from JS  --->
+        </ul>  
 
-            </ul>
-
-   </section>
+         </section>
      
    <section id="projects">
           <h3><u><b>Projects</b></u>  </h3> 
@@ -75,75 +80,70 @@
 
            </ul>
   </section>
-
-          
-    
-    <section id="experience">
+   <section id="experience">
   <!-- Heading for the grid section -->
-  <h3><u>Experience</u></h3>
-
-  <!-- Column 1: Job Info -->
-  <div class="job_info">
-    <h3><b>Job Title</b></h3><br>
-    <div class="job_titles">
-      <h5>Quality Assurance Tester</h5>
-      <p>Aivante Healthcare</p>
-      <p>Performed manual and automation testing using Postman and Cypress.</p>
-      <p>Collaborated with developers via Jira and email to resolve error-handling issues.</p>
-      <p>Documented and tracked defects to improve product quality and stability.</p>
-      <p>Mentored new team members during onboarding.</p>
-    </div>
+   
+  <h3 class="section_heading"><u>Experience</u></h3>
+  <div class="experience_grid">
+  <!--Job Info--> 
+  <div class="job_titles"><h3><u><b>Job Title</b></u></h3></div>
+    <div class="job_description"><h3><u><b>Company Name</b></u></h3></div>
+  <!--Date-->
+  <div class="job_date"><h3><u><b>Date</b></u></h3></div>
+    <div class="job_info"><h5>Quality Assurance Tester</h5></div>
+      <div class="company_name"><h5><strong>Aivante Healthcare</strong></h5></div> 
+     <!--<p>Performed manual and automation testing using Postman and Cypress.
+      Collaborated with developers via Jira and email to resolve error-handling issues.
+      Documented and tracked defects to improve product quality and stability.
+      Mentored new team members during onboarding.</p>--> 
+    <div class="job_Dates"> <h5>Apr 2024 – May 2025<br> (1 yr 2 months)</h5>
   </div>
+   </div>
 
-  <!-- Column 2: Dates -->
-  <div class="job_Dates">
-   <h5> <u>Date</u><h4></h5><br>
-    <p>Apr 2024 – May 2025 (1 yr 2 months)</p>
-  </div>
 </section>
 
 
-<!-- Highlights Section -->
+                  <!-- Highlights Section -->
  
-<section id="highlight">
-  <h5><u><b>Highlights</b></u></h5>
-  <ul>
-    <li>Web Development (JavaScript, HTML, CSS)</li>
-    <li>Postman Certification – API Testing</li>
-    <li>Cypress Automation Testing</li>
-  </ul>
+          <section id="highlight">
+          <h5><u><b>Highlights</b></u></h5>
+        <ul>
+           <li>Web Development (JavaScript, HTML, CSS)</li>
+           <li>Postman Certification – API Testing</li>
+           <li>Cypress Automation Testing</li>
+        </ul>
 </section>
+                  <!---- create Form -->
             
- <section  id="leave_message">
+     <section  id="leave_message">
+      <form id="in_form" name="leave_message"> 
+       <h2><u><b>Leave a Message</b></u></h2>
 
-      <h2>Leave a Message</h2>
- </section><br>
-            <!---- create Form -->
-    <form id="in_form" name="leave_message"> 
-                   <!--create User Name text Box -->
-         <label for="usersName">User Name: </label><br>
-        <input type="text" name="usersName" class="form_input" placeholder="User Name" required><br><br>
+                 <!--create User Name text Box -->
+           <label for="usersName">User Name: </label><br>
+           <input type="text" name="usersName" class="form_input" placeholder="User Name" required><br><br>
         
                    <!--create Email text Box-->
-        <label for ="email">Email: </label><br>
-        <input type="email" name="usersEmail"class="form_input" placeholder="User Email" required><br><br>
+           <label for ="email">Email: </label><br>
+           <input type="email" name="usersEmail"class="form_input" placeholder="User Email" required><br><br>
+
                     <!--create message text box-->
-        <label for="usersMessage">User Message</label><br>
-        <textarea name="usersMessage" class="form_input" placeholder="Write Message" required></textarea>
+           <label for="usersMessage">User Message</label><br>
+           <textarea name="usersMessage" class="form_input" placeholder="Write Message" required></textarea>
 
                     <!--Create Submit button-->
-                    
-        <button id= "button_click"  type="submit">Submit</button>
-      </form>
+            <button id= "button_click"  type="submit">Submit</button>
+              </form>
+             </section>
 
-          <!--Create Message Section-->
+                   <!--Create Message Section-->
+             <section id="Messages">
+            <h3><u><b>Messages</b></u></h3>
+            <p id="output_message">
+              <ul>
 
- <section id="Messages">
-         <h3><u><b>Messages</b></u></h3>
-        <p id="output_message"> </p>
-      <ul></ul>
-      
- </section>
+            </ul></p>
+           </section>
  <script src="JS/index.js" ></script>
 </body>
 </html>
