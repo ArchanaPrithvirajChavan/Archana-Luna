@@ -230,5 +230,5 @@ fetch("https://api.github.com/users/ArchanaPrithvirajChavan/repos")
   })
   .catch((error) => {
     console.error("response not found");
-      
+     document.getElementById('error-message').textContent="failed to load projects: " + error.message;
   });
