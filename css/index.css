@@ -194,20 +194,16 @@ body.dark-mode #About{
   gap: 8%;
   padding: 0.4%;
 }
-body.light-mode #About h3 {
-  color:black;
-  margin-top: 1%;
-  margin-left: 1%;
+
+
+
+h3{
+  color: rgb(138, 14, 99);
 
 }
-body.dark-mode #About h3 {
-  color:white;
-  margin-top: 1%;
-  margin-left: 1%;
-
-}
-#About h3:hover {
+ h3:hover {
  color: rgb(9, 90, 240);
+
 }
 
 #About h1:hover{
@@ -441,6 +437,17 @@ body.dark-mode #in_form {
   text-align: center;
 
 }
+   #in_form h2{
+    font-family:cursive;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 25px;
+    color: rgb(138, 14, 99);
+   }
+   #in_form h2 :hover{
+    color: #2196f3;
+   }
+
 textarea.form_input{
   text-align:left;
   margin-left: 24%;
@@ -468,7 +475,8 @@ textarea.form_input{
   cursor: pointer;
   font-size: 1rem;
   margin-left: 10%;
-  margin-bottom: 2%;
+  margin-bottom: 3%;
+  margin-top:4% ;
 }
 .edit_button:hover{
   cursor: pointer;
@@ -534,7 +542,7 @@ body.dark-mode #Messages {
   height: 15%;
   font-size: 90%;
   padding: 10px;
-  margin-left: 3%;
+  margin-left: 2%;
   border-radius: 1.5em;
   text-align: left;
 
@@ -576,15 +584,17 @@ body.dark-mode #projects {
 #projects ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 3%;
-  padding: 0;
+  gap: 5%;
+  padding:1%;
   list-style-type: none;
-  margin-left: 2%;
+  margin-left: 0;
+  box-sizing: border-box;
 }
 
 #projects ul li {
 
   background-color: #f2f2f2;
+  gap:5%;
   padding: 6px 12px;
   border: 2px solid rgb(147 112 112);
   border-radius: 10px;
@@ -593,6 +603,7 @@ body.dark-mode #projects {
   width: calc(25% - 2%);
   text-align: center;
   font-size: 15px;
+  box-sizing: border-box
   ;
 
 }
@@ -615,6 +626,26 @@ body.dark-mode #projects {
   width: 25px;
   margin-left: 5px;
 }
+
+li.message-item{
+  width: 80%;
+  margin-left:7%;
+  margin-right: 15%;
+  padding:1%;
+  text-align: center;
+
+}
+
+li.message-item span {
+  font-size: 18px;       
+  padding: 8px 12px;     
+  border: 2px solid #333;
+  display: inline-block; 
+  border-radius: 8px;  
+}
+
+
+ 
 
 /*media qurey  for tablets and mobile devices */
 @media (max-width: 768px) {
@@ -680,6 +711,7 @@ body.dark-mode #projects {
   #Messages {
     width: 100%;
     font-size: 1rem;
+    text-align: center;
   }
   textarea.form_input{
   
@@ -691,7 +723,9 @@ body.dark-mode #projects {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    background-color: rgb(15, 114, 114);
   }
+   
 .form_input{
   width:90%;
   margin-left: auto;
@@ -729,3 +763,17 @@ body.dark-mode #projects {
   }
 
   }
+ /* too remove bullets from message form*/
+ul#output_message {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+ul#output_message li::marker {
+  content: none !important;
+}
+
+li.message-item {
+  list-style-type: none !important;
+}

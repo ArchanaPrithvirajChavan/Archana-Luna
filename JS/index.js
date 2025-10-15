@@ -132,7 +132,7 @@ messageForm.addEventListener("submit", (event) => {
   newMessage.setAttribute("class", "message-item");
   
 
-  newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a> : <span>${userMessage}</span>`;
+  newMessage.innerHTML = `<a href="mailto:${userEmail}"> ${userName}</a><br><br> <span>${userMessage}</span>`;
 
   
   // create Edit button
