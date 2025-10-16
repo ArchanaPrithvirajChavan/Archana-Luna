@@ -41,6 +41,40 @@ copyright.textContent = "\u00A9  Archana" + "  " + thisYear;
 //Append copyrite to footer section //
 
 footerElement.appendChild(copyright);
+const myLinks = document.createElement('section');
+myLinks.classList.add('my_links');
+
+// Email link
+const emailLink = document.createElement('a');
+emailLink.href = 'mailto:archana.chavan2@gmail.com';
+emailLink.title = 'Email Me';
+emailLink.innerHTML = '<img src="Image/Gmail_Icon.png" alt="Email" class="icon">';
+myLinks.appendChild(emailLink);
+
+// LinkedIn link
+const linkedinLink = document.createElement('a');
+linkedinLink.href = 'https://www.linkedin.com/in/archana-chavan-b276b0262/';
+linkedinLink.target = '_blank';
+linkedinLink.rel = 'noopener noreferrer';
+linkedinLink.title = 'LinkedIn Profile';
+linkedinLink.innerHTML = '<img src="Image/LinkedIn_logo_initials.png" alt="LinkedIn" class="icon">';
+myLinks.appendChild(linkedinLink);
+
+// GitHub link
+const githubLink = document.createElement('a');
+githubLink.href = 'https://github.com/ArchanaPrithvirajChavan';
+githubLink.target = '_blank';
+githubLink.rel = 'noopener noreferrer';
+githubLink.title = 'GitHub Profile';
+githubLink.innerHTML = '<img src="Image/GitHub-Mark.png" alt="GitHub" class="icon">';
+myLinks.appendChild(githubLink);
+
+// Append links to footer
+footer.appendChild(myLinks);
+
+// Add footer to body
+document.body.appendChild(footer);
+
 
 // creating array of slills
 
