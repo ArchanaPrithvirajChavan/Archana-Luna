@@ -2,230 +2,767 @@
 
 
 
-body{                               /*page Margin*/
-    background:content-box radial-gradient(rgb(243, 207, 212), rgb(206, 227, 236));
-     font-size: 1rem;
-       margin-top: 0.5%;;
-       margin-bottom: 0.8%;
-       margin-left: 4%;
-       margin-right: 5%;
-       padding: 0.5%;
-       width: 100%;
-        
+body.light-mode{
+  /*page Margin*/
+  background: content-box radial-gradient(rgb(229, 167, 175), rgb(172, 209, 224));
+  font-size: 1rem;
+  margin-top: 0.5%;
+  margin-bottom: 0.8%;
+  margin-left: 3%;
+  margin-right: 8%;
+  padding: 0.5%;
+  width: 100%;
+
+}
+body.dark-mode{
+      background-color:#444141;
+      color: white;
+      font-size: 1rem;
+      margin-top: 0.5%;
+      margin-bottom: 0.8%;
+      margin-left: 3%;
+      margin-right: 8%;
+      padding: 0.5%;
+      width: 100%;
+
     }
 
-h1
-   {                                 /*Name in Engish*/
-    color: rgb(124, 11, 230);
-    font-family:Arial, Helvetica, sans-serif ;
-    text-align: center;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-    font-size: 1.5em;
-  }
+body.light-mode h1 {
+  /*Name*/
+  color: rgb(138, 14, 99);
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(71, 65, 70, 0.7);
+  font-size: 2em;
+}
+body.dark-mode h1{
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(71, 65, 70, 0.7);
+  font-size: 2em;
+}
+
+
+/*Image Styling*/
+.my_img img:hover{
+transform: scale(1.3);
+}
+
+.my_img img {
   
-    h2 
-   {                          /*Name in Marathi(other language)*/
-    font-family: 'Noto Sans Devanagari', sans-serif;
-    
-    font-size: 0.8em;
-    font-style:italic;
-    text-align: left; 
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-   }
-
-    .circle-img img 
-  {
   width: 10%;
-  box-shadow: 10px 10px 20px  rgb(75, 63, 63); /* shadow around circle */
+  align-items: center;
+  box-shadow: 10px 10px 20px rgb(48, 48, 26);
   display: block;
+  margin: 0 auto;
+  border-radius: 15%;
+  transition:transform 0.3s ease;
 }
+ #myText {
+      display: none;
+    }
 
+    .logo {
+      width: 100px;
+      height: auto;
+    }
+    .switch{
+      position:relative;
+     display: inline-block ;
+     width:50px;
+     height:24px;
+     margin-left: 95%;
+    }
+    .switch input{
+      opacity:0;
+      width: 0;
+      height:0
+    }
+    .slider{
+      position:absolute;
+      cursor:pointer;
+      top:0;
+      left:0;
+      right:0;
+      bottom: 0;
+      background-color: #aba2a2;
+      transition:  0.4s;
+      border-radius:24px;
 
-
-.navBar
- {
-
-background-color: rgb(56, 49, 49);
-padding: 0.1%;
-margin-left: 0.2%;
-width: 100%;
-
-
+    }
     
-}
-
-.navBar nav ul        /* Navigation bar displayed as flex (vertically) */
-{
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-gap:5%
+    
+    .slider:before{
+      position:absolute;
+      content:"";
+      height:18px;
+      width:18px;
+      left:3px;
+      bottom:4px;
+      background-color: white;
+      transition:0.4s;
+      border-radius: 50%;
+    }
+    input:checked+.slider{
+      background-color: #2196f3;
+    }
+    input:checked+ .slider:before{
+      transform:translateX(26px);
+    }
    
+body.light-mode .navBar {
+
+  background: linear-gradient(to right, rgb(31, 6, 15), rgb(153, 86, 115));
+   border:solid palevioletred;
+  border-radius: 15px;
+  padding: 0.4%;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 90%;
+
+
+}
+body.dark-mode .navBar{
+    
+  background-color: #272424;
+  color: white;
+  border-radius: 15px;
+  padding: 0.4%;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 90%;
 }
 
-.navBar nav ul li a 
-{
+/* Navigation bar displayed as flex  */
+.navBar nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0.4%;
+  margin: 0%;
+  gap: 10%
+}
+
+.navBar nav {
+  margin-right: 2%;
+}
+
+.navBar nav ul li a {
   display: block;
   padding: 10px 15px;
+  color: white;
+  border-radius: 15%;
+  }
+.navBar nav ul li a:hover {
+ color: rgb(160, 198, 233);
+  width: 90%
+}
+
+
+.profile-img
+ {
+  width: 110px;
+}
+
+body.light-mode #About{
+
+  width: 100%;
+
+   background: linear-gradient(to right, rgb(214, 228, 229), rgb(206, 182, 194));
+  border:solid palevioletred;
+  border-radius: 15px;
+  width: 90%;
+  height: 80%;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-left: 1%;
+  overflow: hidden;
+  gap: 8%;
+  padding: 0.4%;
+
+}
+body.dark-mode #About{
+      background-color:#272424;
+      color: white;
+      border-radius: 15px;
+  width: 90%;
+  height: 80%;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-left: 1%;
+  overflow: hidden;
+  gap: 8%;
+  padding: 0.4%;
+}
+body.light-mode #About h3 {
+  color:black;
+  margin-top: 1%;
+  margin-left: 1%;
+
+}
+body.dark-mode #About h3 {
+  color:white;
+  margin-top: 1%;
+  margin-left: 1%;
+
+}
+#About h3:hover {
+ color: rgb(9, 90, 240);
+}
+
+#About h1:hover{
+  color: rgb(9, 90, 240);
+}
+
+
+body.light-mode li {
+  color: rgb(2, 2, 91);
+}
+body.dark-mode li{
   color:white;
 }
 
 
-.navBar nav ul li a:hover
- {
-  background-color: rgb(71, 63, 63);
-  width:100%
- }
+body.light-mode #highlight {
 
-img
-{
-    width: 110px;
+   background: linear-gradient(to right, rgb(214, 228, 229), rgb(206, 182, 194));
+  border:solid palevioletred;
+  border-radius: 15px;
+  width: 90%;
+  height: 80%;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-left: 1%;
+  overflow: hidden;
+  gap: 8%;
+  padding: 0.4%;
+
+}
+body.dark-mode #highlight {
+      background-color:#272424;
+      color: white;
+      border-radius: 15px;
+  width: 90%;
+  height: 80%;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-left: 1%;
+  overflow: hidden;
+  gap: 8%;
+  padding: 0.4%;
+}
+body.light-mode h5 {
+  /*Highlight*/
+  color: rgb(23, 8, 8);
+  font-size: large;
+}
+body.dark-mode h5{
+  color:white;
+}
+
+body.light-mode p {
+   color: rgb(224, 7, 155);
+  margin-left: 3%;
+  margin-right: 10%;
+  padding: 0.4%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  margin-bottom: 3%;
+}
+body.dark-mode p {
+   color: white;
+  margin-left: 3%;
+  margin-right: 10%;
+  padding: 0.4%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  margin-bottom: 3%;
+}
+body.light-mode p:hover{
+  color:rgb(3, 136, 237);
+}
+
+
+body.light-mode #experience {
+  background: linear-gradient(to right, rgb(214, 228, 229), rgb(206, 182, 194));
+  border:solid palevioletred;
+  border-radius: 15px;
+  width: 90%;
+  height: 80%;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-left: 1%;
+  overflow: hidden;
+  gap: 8%;
+  padding: 0.4%;
+}
+body.dark-mode #experience {
+background-color:#272424;
+color: white;
+border-radius: 15px;
+  width: 90%;
+  height: 80%;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-left: 1%;
+  overflow: hidden;
+  gap: 8%;
+  padding: 0.4%;
+}
+
+#experience h3 {
+
+  grid-column: span 2;
+  text-align: left;
+  margin: 0;
+  padding: 10px 0;
+
+}
+.section-heading {
+  margin: 0;
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.experience_grid {
+  display: grid;
+  grid-template-columns: 40% 25% 25% ;
+  grid-template-rows: 10%;
+  gap: 1.5rem;
+  align-items: start;
+  margin-left: 2%;
+}
+
+
+.job_titles {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+
+}
+.job_info {
+  padding-right: 1rem;
+}
+
+.job_dates {
+ text-align: right;;
+}
+
+/* apply flex on skill section*/
+
+body.light-mode #Skills {
+
+ background: linear-gradient(to right, rgb(214, 228, 229), rgb(206, 182, 194));
+  border:solid palevioletred;
+  border-radius: 15px;
+  width: 90%;
+  height: auto;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-left: 1%;
+  overflow: hidden;
+  gap: 8%;
+  padding: 0.4%;
+}
+body.dark-mode #Skills {
+
+ background: #272424;
+  color: white;
+  border-radius: 15px;
+  width: 90%;
+  height: auto;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-left: 1%;
+  overflow: hidden;
+  gap: 8%;
+  padding: 0.4%;
+}
+
+body.light-mode #Skills li:hover{
+  cursor: pointer; 
+  color: rgb(204, 10, 126) ;
+}
+body.light-mode #Skills li:hover {
+  background-color: #b5e0ed;
+  cursor: pointer;
+}
+
+#Skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4%;
+  padding: 2%;
+  list-style-type: none;
+}
+
+#Skills li {
+  background-color: #f2f2f2;
+  padding: 6px 12px;
+  border: 2px solid rgb(147 112 112);
+  margin-bottom: 1%;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+  width: calc(20% - 2%);
+  text-align: center;
+  font-size: 15px;
+}
+/*Form*/
+body.light-mode #in_form {
+  width: 90%;
+  height: 90%;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-left: 1%;
+  overflow: hidden;
+  gap: 8%;
+  padding: 0.4%;
+
+  background: linear-gradient(to right, rgb(214, 228, 229), rgb(206, 182, 194));
+  border:solid palevioletred;
+  border-radius: 15px;
+  text-align: center;
+
+}
+body.dark-mode #in_form {
+  width: 90%;
+  height: 90%;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-left: 1%;
+  overflow: hidden;
+  gap: 8%;
+  padding: 0.4%;
+
+  background:#272424;
+  color: white;
+  border-radius: 15px;
+  text-align: center;
+
+}
+textarea.form_input{
+  text-align:left;
+  margin-left: 24%;
+  border:solid rgb(91, 79, 82);
+}
+
+
+#button_click {
+  color: wheat;
+  background-color: rgb(71, 63, 63);
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 15%;
+  margin-bottom: 2%;
+}
+#button_click:hover{
+  cursor: pointer;
+  color: rgb(208, 23, 180) ;
+}
+.edit_button{
+  color: wheat;
+  background-color: rgb(71, 63, 63);
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 10%;
+  margin-bottom: 2%;
+}
+.edit_button:hover{
+  cursor: pointer;
+  color: rgb(208, 23, 180) ;
+}
+
+.removeBtn {
+  color: wheat;
+  background-color: rgb(71, 63, 63);
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 2%;
+  margin-bottom: 2%;;
+}
+.removeBtn:hover{
+  cursor: pointer;
+  color: rgb(208, 23, 180) ;
+}
+
+  /*leave Message section*/
+body.light-mode #info_form {
+  border:solid palevioletred;
+  width: 30%;
+  text-align: center;
+  border-radius: 15px;
+
+}
+/* output message */
+body.light-mode #Messages {
+  display: none;
+  background: linear-gradient(to right, rgb(214, 228, 229), rgb(206, 182, 194));
+  border:solid palevioletred;
+  border-radius: 15px;
+  width: 90%;
+  height: auto;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-left: 1%;
+  overflow: hidden;
+  gap: 8%;
+  padding: 0.4%;
+  text-align: center;
+}
+body.dark-mode #Messages {
+  display: none;
+  background:#272424;
+  color: white;
+  border-radius: 15px;
+  width: 90%;
+  height: auto;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-left: 1%;
+  overflow: hidden;
+  gap: 8%;
+  padding: 0.4%;
+  text-align: center;
+}
+/*Form textBox */
+.form_input {
+  width: 35%;
+  height: 15%;
+  font-size: 90%;
+  padding: 10px;
+  margin-left: 3%;
+  border-radius: 1.5em;
+  text-align: left;
+
+}
+.form_input:hover{
+    background-color: #b5e0ed;
+}
+body.light-mode #projects {
+
+   background: linear-gradient(to right, rgb(214, 228, 229), rgb(206, 182, 194));
+  border:solid palevioletred;
+  border-radius: 15px;
+  width: 90%;
+  height: 80%;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-left: 1%;
+  overflow: hidden;
+  gap: 8%;
+  padding: 0.4%;
+
+}
+body.dark-mode #projects {
+
+   background: #272424;
+  color: white;
+  border-radius: 15px;
+  width: 90%;
+  height: 80%;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-left: 1%;
+  overflow: hidden;
+  gap: 8%;
+  padding: 0.4%;
+
+}
+
+#projects ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3%;
+  padding: 0;
+  list-style-type: none;
+  margin-left: 2%;
+}
+
+#projects ul li {
+
+  background-color: #f2f2f2;
+  padding: 6px 12px;
+  border: 2px solid rgb(147 112 112);
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+  width: calc(25% - 2%);
+  text-align: center;
+  font-size: 15px;
+  ;
+
+}
+#projects ul li a:hover{
+  
+  color: rgb(204, 10, 126) ;
+  cursor: pointer; 
+}
+#projects li:hover {
+  background-color: #b5e0ed;
+   cursor: pointer;
 }
 .my_links{
-      display: flex;
-      gap:50px;
-      
-}
-
- #About{
-    color: rgb(73, 45, 45);
- }   
-p{
-    color: rgb(111, 13, 13);
-}
-li{
-    color: rgb(2, 2, 91);
-}
-
-h3{ 
-    color: black;                            /*about*/
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
-}
-.highlight{
-    margin-top: 2%;
-    margin-right: 0.2%;
-    margin-bottom: 20%;
-    
-}
-h5{                            /*Highlight*/
-    color: rgb(23, 8, 8);
-    font-size: large;
-}
-p{
-  margin-left: 5%;
-  margin-right: 10%;
-  padding: 1%;
-}
-.experience
-{
- 
-  margin-right: 2%;
-  margin-top: 1%;
-  margin-left: 4%;
-  display:grid; 
+  display: flex;
+  gap:10%;
+  justify-content: center;
   
-                      /* Applyed grid on experience section*/
-  grid-template-columns: 70%  25%;
-  grid-template-rows: 20%  25%;
-  
-  overflow:auto;
-  gap: 10%;
-  padding: 0.4%;
-  border: 1px solid grey;
-  background-color: rgb(241, 222, 222);
-    
 }
-.job_titles{
-   margin-top: 1%;
-   margin-left: 1%;
-   color: black;
+.my_links .icon{
+  width: 25px;
+  margin-left: 5px;
 }
-.job_Dates
-{
-  margin-top:15%;
-  margin-right: 8%;
-}
-   /* apply flex on skill section*/
 
-   #Skills
-   ul {
-    display: flex;
-    gap: 3%;
-    
-    
-   }
-   #Skills
+/*media qurey  for tablets and mobile devices */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.2em;
+    color: rgb(0, 195, 255);
+    text-align: center;
+  }
 
-   li {
-       color: black;
-   }
-                      /*media qurey  for tablets and mobile devices */
-
-
- @media (max-width: 768px) {
-h1 
-{
-     font-size: 1em;
-     color: rgb(0, 195, 255);
-     text-align: center;
-
-     
-}
-.my_links 
-{
+  #projects ul {
     flex-direction: column;
-     font-size: 0.15%;
-     
-     gap: 0.15%;  
-}
-.experience
-    {
-       grid-template-columns: 1fr; 
-       grid-template-rows: auto;
-     }
-.navBar nav ul 
-     {
-        gap:0.5%;
-      }
+    justify-content: center;
+  }
 
-.navBar nav ul li a 
-     {
-       justify-content: space-between;
-  
-     }
+  #projects ul li {
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+  }
 
-#Skills ul 
-      {
-    display: flex;
+  .my_links {
     flex-direction: column;
+    font-size: 1rem;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .experience_grid {
+    display: grid;
+  grid-template-columns: 40% 30% 30% ;
+  grid-template-rows: 10%;
+  gap: 1.5rem;
+  align-items: start;
+  margin-left: 2%;
+  }
+  .navBar nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .navBar nav ul li a {
+  text-align: center;
+  padding:8px;
+  font-size: 1rem;
+  }
+  .switch{
+      position:relative;
+     display: inline-block ;
+     width:50px;
+     height:24px;
+     margin-left: 90%;
+    }
+
+  #Skills ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 5%;
-    }
-
   }
-                  /*media qurey  for desktops,laptops or monitors devices */
 
-    @media (min-width:1275px){
-   h1 
-    {
-     font-size: 2em;
-     color: rgb(255, 0, 208);
-     text-align: center;
-    }
 
-   .my_links ul 
-{
-    flex-direction: row;
-     font-size: larger;
-     align-items: center;
-     gap: 40px;  
+  #Messages {
+    width: 100%;
+    font-size: 1rem;
+  }
+  textarea.form_input{
+  
+ margin-left: 2%;
+  border:solid rgb(91, 79, 82);
 }
-.experience
- {
-     grid-template-columns: 1fr; 
-     grid-template-rows: auto;
+
+  #output_message ul .message-item {
+    display: flex;
+
+  .my_links {
+
+    flex-direction: column;
+    font-size: 1rem;
+    gap: 10px;
+    align-items: center;
   }
+
+  .experience_grid {
+    display: grid;
+  grid-template-columns: 40% 30% 30% ;
+  grid-template-rows: 10%;
+  gap: 1.5rem;
+  align-items: start;
+  margin-left: 2%;
+  }
+  .navBar nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .navBar nav ul li a {
+  text-align: center;
+  padding:8px;
+  font-size: 1rem;
+  }
+  .switch{
+      position:relative;
+     display: inline-block ;
+     width:50px;
+     height:24px;
+     margin-left: 90%;
     }
-    
+
+  #Skills ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+.form_input{
+  width:90%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+  justify-content: center;
+}}
 
 
+
+
+  /*media qurey  for desktops,laptops or monitors devices */
+
+  @media (min-width: 1275px) {
+  h1 {
+    font-size: 2em;
+    color: rgb(255, 0, 208);
+    text-align: center;
+  }
+
+  .my_links ul {
+    flex-direction: row;
+    font-size: larger;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .experience_grid {
+    display: grid;
+  grid-template-columns: 40% 25% 25% ;
+  grid-template-rows: 10%;
+  gap: 1.5rem;
+  align-items: start;
+  margin-left: 2%;
+  }
+
+  }
