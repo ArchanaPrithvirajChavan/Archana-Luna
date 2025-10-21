@@ -141,10 +141,25 @@ p{
    margin-left: 1%;
    color: black;
 }
-.job_Dates{
+.job_Dates
+{
   margin-top:15%;
   margin-right: 8%;
 }
+   /* apply flex on skill section*/
+
+   #Skills
+   ul {
+    display: flex;
+    gap: 3%;
+    
+    
+   }
+   #Skills
+
+   li {
+       color: black;
+   }
                       /*media qurey  for tablets and mobile devices */
 
 
@@ -180,6 +195,13 @@ h1
   
      }
 
+#Skills ul 
+      {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    }
+
   }
                   /*media qurey  for desktops,laptops or monitors devices */
 
@@ -205,6 +227,5 @@ h1
   }
     }
     
-
 
 
