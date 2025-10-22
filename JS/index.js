@@ -1,14 +1,6 @@
 // create memory for footer section in DOM//
 
 const footer = document.createElement("footer");
-
-//add some style to footer//
-
-footer.setAttribute(
-  "style",
-  "  margin-top: 0px; margin-bottom:20px; margin-left:50px;"
-);
-
 //add id to footer section //
 
 footer.setAttribute("id", "fooTer");
@@ -71,11 +63,6 @@ myLinks.appendChild(githubLink);
 
 // Append links to footer
 footer.appendChild(myLinks);
-
-// Add footer to body
-document.body.appendChild(footer);
-
-
 // creating array of slills
 
 let skill = [
@@ -114,8 +101,6 @@ for (let i = 0; i < skill.length; i++) {
 }
   function toggleMode() {
     const body =document.body;
-    const about=document.getElementById("About")
-    const naveBar=document.getElementById("navBar")
     const toggle = document.getElementById("modeToggle");
 
   if(toggle.checked){
@@ -130,9 +115,7 @@ for (let i = 0; i < skill.length; i++) {
     
   }
   
-  //document.body.classList.add("light-mode");
-
-  }
+ }
 //create messageForm veriable to get form by name//
 
 const messageForm = document.querySelector('form[name="leave_message"]');
